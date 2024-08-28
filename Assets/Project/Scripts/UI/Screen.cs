@@ -28,7 +28,7 @@ namespace Project.Scripts.UI.Screens
 
         private void OnDisable()
         {
-            Time.timeScale = 1;
+            Time.timeScale = 1; //todo КОСТЫЛЬ
         }
     }
 }

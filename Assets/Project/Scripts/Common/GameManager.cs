@@ -1,5 +1,4 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using Project.Scripts.Factory;
 using Project.Scripts.Health;
 using Project.Scripts.Hero;
@@ -17,8 +16,6 @@ namespace Project.Scripts.Common
         [Inject] private UIManager _uiManager;
         [Inject] private HeroController _controller;
 
-        [SerializeField] private AudioSource _audioGame;
-        
         private HeroHealth _heroHealth;
         private CompositeDisposable _disposable = new();
         
@@ -32,7 +29,6 @@ namespace Project.Scripts.Common
                 if (v <= 0)
                 {
                     _uiManager.SetScreen(EScreenType.Failed);
-                    _audioGame.volume = 0.1F;
                 }
             }).AddTo(_disposable);
             
@@ -41,7 +37,6 @@ namespace Project.Scripts.Common
                 if (v <= 0)
                 {
                     _uiManager.SetScreen(EScreenType.Victory);
-                    _audioGame.volume = 0.1F;
                 }
             }).AddTo(_disposable);
         }

@@ -22,6 +22,7 @@ namespace Project.Scripts.Zenject
             Container.BindInterfacesAndSelfTo<EnemyPool>().AsSingle();
             Container.BindInterfacesAndSelfTo<UIManager>().FromComponentsInHierarchy().AsSingle();
             Container.Bind<SceneLoader>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<MusicManager>().FromComponentsInHierarchy().AsSingle();
         }
     }
 }

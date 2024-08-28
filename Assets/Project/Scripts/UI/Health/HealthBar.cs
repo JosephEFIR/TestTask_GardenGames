@@ -9,7 +9,6 @@ namespace Project.Scripts.UI.Health
     public class HealthBar : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
-        [SerializeField] private TextMeshProUGUI _textMeshPro;
 
         private HealthComponent _healthComponent;
         private CompositeDisposable _disposable = new();
@@ -26,7 +25,6 @@ namespace Project.Scripts.UI.Health
                 if (v != 0)
                 {
                     _slider.value = (float) v / _healthComponent.MaxHealth.Value;
-                    _textMeshPro.text = $"{v}/{_healthComponent.MaxHealth.Value}";
                 }
             }).AddTo(_disposable);
         }

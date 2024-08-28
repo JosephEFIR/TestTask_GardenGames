@@ -8,7 +8,7 @@ namespace Project.Scripts.Zenject
     {
         public override void InstallBindings()
         {
-            Container.Bind<SceneLoader>().AsSingle().NonLazy();
+            Container.Bind<SceneLoader>().AsSingle().NonLazy(); //todo project Context почему то не может подвязать этот компонент
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Project.Scripts.UI
         protected override void OnClick()
         {
             _uiManager.SetScreen(EScreenType.Pause, true);
-            _audioSource.volume = 0.1F;
             Time.timeScale = 0;
         }
     }

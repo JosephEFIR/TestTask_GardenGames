@@ -7,12 +7,11 @@ namespace Project.Scripts.UI
     public class ResumeButton : BaseButton
     {
         [Inject] private UIManager _uiManager;
-        [SerializeField] private AudioSource _audioSource;
+        [Inject] private MusicManager _musicManager;
         
         protected override void OnClick()
         {
             _uiManager.SetScreen(EScreenType.Game, true);
-            _audioSource.volume = 0.5F;
             Time.timeScale = 1;
         }
     }
