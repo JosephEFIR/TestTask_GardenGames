@@ -29,10 +29,13 @@ namespace Project.Scripts.Triggers
             {
                 if (!_unitHasDamaged)
                 {
-                    HealthComponent enemyHealth = other.GetComponent<HealthComponent>();
-                    enemyHealth.GetDamage(_damage);
-                    _unitHasDamaged = true;
-                    ResetDamageFlag().Forget();
+                    if (other.TryGetComponent<HealthComponent>(out HealthComponent healthComponent))
+                    {
+                        HealthComponent enemyHealth = other.GetComponent<HealthComponent>();
+                        enemyHealth.GetDamage(_damage);
+                        _unitHasDamaged = true;
+                        ResetDamageFlag().Forget();
+                    }
                 }
             }
         }

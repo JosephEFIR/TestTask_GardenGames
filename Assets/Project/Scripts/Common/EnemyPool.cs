@@ -44,10 +44,25 @@ namespace Project.Scripts.Factory
 
         public void ActivateEnemies()
         {
-            for (int i = 0; i < _activeEnemiesStart; i++)
+            int count = 0;
+
+            if (_enemies.Count != 0)
             {
-                _enemies[i].gameObject.SetActive(true);
-                ActiveEnemies.Value++;
+                if (_enemies.Count >= _activeEnemiesStart)
+                {
+                    count = _activeEnemiesStart;
+                }
+
+                if (_enemies.Count < _activeEnemiesStart)
+                {
+                    count = _enemies.Count;
+                }
+
+                for (int i = 0; i < count; i++)
+                {
+                    _enemies[i].gameObject.SetActive(true);
+                    ActiveEnemies.Value++;
+                }
             }
         }
 

@@ -23,6 +23,7 @@ namespace Project.Scripts.Factory
             _enemyPool.Init(_enemyFactory,_enemySpawnConfig,_spawnPoints);
             _enemyPool.ActiveEnemies.Subscribe(v =>
             {
+                Debug.Log(v);
                 if (v <= 0)
                 {
                     _enemyPool.ActivateEnemies();

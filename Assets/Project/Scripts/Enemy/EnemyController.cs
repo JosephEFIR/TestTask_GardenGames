@@ -12,7 +12,7 @@ namespace Project.Scripts.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyController : UnitController
     {
-        [Inject] private HeroController _heroController;
+        private HeroController _heroController;
         
         private NavMeshAgent _agent;
         private UnitAnimator _animator;
@@ -26,6 +26,11 @@ namespace Project.Scripts.Enemy
         {
             _agent = GetComponent<NavMeshAgent>();
             _animator = GetComponent<UnitAnimator>();
+        }
+
+        private void Start()
+        {
+            _heroController = FindObjectOfType<HeroController>(); //TODO пробовал через Zenject искать, выдает порой ошибку на update. Хотя в игре все нормально
         }
 
         private void Update()
