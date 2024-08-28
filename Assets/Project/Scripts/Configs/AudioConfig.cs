@@ -11,6 +11,8 @@ namespace Project.Scripts.Configs
         Hit,
         GetDamage,
         Die,
+        WaveKilledFirst,
+        WaveKilledSecond,
     }
     
     [CreateAssetMenu(fileName = "AudioConfig",  menuName = "Configs/AudioConfig")]

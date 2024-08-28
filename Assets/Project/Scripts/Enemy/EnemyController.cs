@@ -9,6 +9,7 @@ namespace Project.Scripts.Enemy
     public sealed class EnemyController : UnitController
     {
         [Inject] private HeroController _heroController;
+        [SerializeField] private bool _blockEnemy;
         
         private NavMeshAgent _agent;
 
@@ -20,6 +21,8 @@ namespace Project.Scripts.Enemy
 
         private void Update()
         {
+            if(_blockEnemy){return;}
+            
             if (_heroController != null)
             {
                 float distanceToTarget = Vector3.Distance(transform.position, _heroController.transform.position);

@@ -17,6 +17,7 @@ namespace Project.Scripts.Factory
         
         public ReactiveProperty<int> ActiveEnemies = new();
         public ReactiveProperty<int> EnemiesCount = new();
+        public ReactiveProperty<int> EnemiesKilled = new();
 
         private int _activeEnemiesStart;
         private Transform _currentSpawnPoint;
@@ -73,6 +74,7 @@ namespace Project.Scripts.Factory
         public void RemoveEnemy(EnemyController enemy)
         {
             _enemies.Remove(enemy);
+            EnemiesKilled.Value++;
             enemy.Destroy();
             
             ActiveEnemies.Value--;

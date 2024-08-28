@@ -16,6 +16,7 @@ namespace Project.Scripts.Common
         [Inject] private UIManager _uiManager;
         [Inject] private HeroController _controller;
 
+        [SerializeField] private HealthPack _healthPack;
         private HeroHealth _heroHealth;
         private CompositeDisposable _disposable = new();
         
@@ -26,6 +27,11 @@ namespace Project.Scripts.Common
 
             _heroHealth.CurrentHealth.Subscribe(v =>
             {
+                if (v <= _heroHealth.MaxHealth.Value / 2)
+                {
+                    if(_healthPack != null) _healthPack.gameObject.SetActive(true); //TODO поставил бы в другое место но уже времени банально нету
+                }
+                
                 if (v <= 0)
                 {
                     _uiManager.SetScreen(EScreenType.Failed);
