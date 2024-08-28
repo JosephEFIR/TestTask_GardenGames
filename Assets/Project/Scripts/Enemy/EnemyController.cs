@@ -31,8 +31,7 @@ namespace Project.Scripts.Enemy
         private void Update()
         {
             float distanceToTarget = Vector3.Distance(transform.position, _heroController.transform.position);
-            Debug.Log(distanceToTarget);
-            
+
             if (distanceToTarget > 1F)
             {
                 Move();

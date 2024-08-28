@@ -5,7 +5,6 @@ using Project.Scripts.Health;
 using Project.Scripts.Hero;
 using UniRx;
 using UnityEngine;
-using Zenject;
 
 namespace Project.Scripts.Triggers
 {
@@ -26,7 +25,7 @@ namespace Project.Scripts.Triggers
 
         private void OnTriggerEnter(Collider other)
         {
-            if (_isAttack)
+            if (_isAttack && other.gameObject.tag != _controller.gameObject.tag)
             {
                 if (!_unitHasDamaged)
                 {

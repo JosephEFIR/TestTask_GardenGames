@@ -45,7 +45,13 @@ namespace Project.Scripts.Health
         {
             _animator.SetTrigger(EAnimationType.Die);
             await UniTask.Delay(500, cancellationToken: _cancelToken.Token);
+            OnDie();
             Destroy(gameObject);
+        }
+
+        protected virtual void OnDie()
+        {
+            
         }
 
         private void OnDestroy()
