@@ -11,6 +11,7 @@ namespace Project.Scripts.UI.Screens
         Victory,
         Failed,
         Game,
+        Pause,
     }
     
     public class Screen : MonoBehaviour
@@ -23,6 +24,11 @@ namespace Project.Scripts.UI.Screens
         private void Start()
         {
             _backGround.DOFade(1F, 2);
+        }
+
+        private void OnDisable()
+        {
+            Time.timeScale = 1;
         }
     }
 }

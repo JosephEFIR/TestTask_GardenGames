@@ -15,12 +15,13 @@ namespace Project.Scripts.UI
 
         private void Start()
         {
+            _currentScreen = _screens[_startScreen];
             SetScreen(_startScreen);
         }
 
         public void SetScreen(EScreenType screenType, bool hideCurrentScreen = false)
         {
-            // _currentScreen.gameObject.SetActive(!hideCurrentScreen);
+            _currentScreen.gameObject.SetActive(!hideCurrentScreen);
             
             _screens[screenType].gameObject.SetActive(true);
             _currentScreen = _screens[screenType];

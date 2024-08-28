@@ -32,7 +32,7 @@ namespace Project.Scripts.Common
                 if (v <= 0)
                 {
                     _uiManager.SetScreen(EScreenType.Failed);
-                    _audioGame.volume = 0.2F;
+                    _audioGame.volume = 0.1F;
                 }
             }).AddTo(_disposable);
             
@@ -41,7 +41,7 @@ namespace Project.Scripts.Common
                 if (v <= 0)
                 {
                     _uiManager.SetScreen(EScreenType.Victory);
-                    _audioGame.volume = 0.2F;
+                    _audioGame.volume = 0.1F;
                 }
             }).AddTo(_disposable);
         }
