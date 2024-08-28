@@ -31,6 +31,8 @@ namespace Project.Scripts.Health
         public void GetDamage(int value)
         {
             CurrentHealth.Value -= value;
+            _animator.SetTrigger(EAnimationType.GetDamage);
+            
             if (CurrentHealth.Value <= 0)
             {
                 _cancelToken = new CancellationTokenSource();

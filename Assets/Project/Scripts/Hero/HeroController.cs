@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UniRx;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Project.Scripts.Hero
 {
@@ -15,7 +16,7 @@ namespace Project.Scripts.Hero
         private int _coolDown = 500;
         private int comboID = 0;
         
-        public readonly ReactiveProperty<bool> IsAttack = new();
+        
         private void Awake()
         {
             _animator = GetComponent<UnitAnimator>();
@@ -40,11 +41,7 @@ namespace Project.Scripts.Hero
 
         private void SetCombo()
         {
-            if (comboID > _comboCount)
-            {
-                comboID = 0;
-            }
-            comboID++;
+            comboID = Random.Range(0, _comboCount + 1);
             _animator.SetAnimID(comboID);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Project.Scripts.Configs;
+using UniRx;
 using UnityEngine;
 
 namespace Project.Scripts.Hero
@@ -8,5 +9,7 @@ namespace Project.Scripts.Hero
         [SerializeField] private UnitConfig _config;
 
         public UnitConfig Config => _config;
+        
+        public readonly ReactiveProperty<bool> IsAttack = new();
     }
 }

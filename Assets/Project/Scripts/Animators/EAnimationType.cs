@@ -5,6 +5,7 @@
         None,
         Idle,
         Attack,
+        GetDamage,
         Die,
     }
 }
