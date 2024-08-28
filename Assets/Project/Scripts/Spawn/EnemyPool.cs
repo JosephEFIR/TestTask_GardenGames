@@ -76,8 +76,7 @@ namespace Project.Scripts.Factory
             enemy.Destroy();
             
             ActiveEnemies.Value--;
-            EnemiesCount.Value--;
-            Debug.Log(EnemiesCount.Value);
+            EnemiesCount.Value = _enemies.Count;
         }
 
         private void SetNextPos()

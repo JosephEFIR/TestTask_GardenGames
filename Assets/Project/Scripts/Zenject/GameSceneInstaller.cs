@@ -14,6 +14,7 @@ public class GameSceneInstaller : MonoInstaller
         
         Container.BindInterfacesAndSelfTo<HeroController>().FromComponentsInHierarchy().AsSingle();
         Container.BindInterfacesAndSelfTo<EnemyFactory>().AsSingle();
+        Container.BindInterfacesAndSelfTo<EnemySpawner>().FromComponentsInHierarchy().AsSingle();
         Container.BindInterfacesAndSelfTo<EnemyPool>().AsSingle();
         Container.BindInterfacesAndSelfTo<UIManager>().FromComponentsInHierarchy().AsSingle();
     }

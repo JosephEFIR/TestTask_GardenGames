@@ -23,5 +23,11 @@ namespace Project.Scripts.Health
             MaxHealth.Value = _heroController.Config.UnitStats[EUnitStat.Health];
             CurrentHealth.Value = MaxHealth.Value;
         }
+
+        protected override void OnDie()
+        {
+            Destroy(gameObject);
+            base.OnDie();
+        }
     }
 }

@@ -46,18 +46,16 @@ namespace Project.Scripts.Health
             {
                 _cancelToken = new CancellationTokenSource();
                 CurrentHealth.Value = 0;
-                Die().Forget();
+                Die();
             }
         }
 
-        private async UniTaskVoid Die()
+        private void Die()
         {
             _animator.SetTrigger(EAnimationType.Die);
             _audioSource.clip = _audioConfig.AudioClips[EAudioClip.Die];
             _audioSource.Play();
             OnDie();
-            
-            await UniTask.Delay(1000, cancellationToken: _cancelToken.Token);
         }
 
         protected virtual void OnDie()

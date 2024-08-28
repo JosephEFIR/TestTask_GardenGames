@@ -15,3 +15,4 @@ MonoBehaviour:
   _prefab: {fileID: 1971949387619097367, guid: d5d3c0c4d6c2186499a95f1b34837868, type: 3}
   _poolSize: 10
   _activeEnemiesStart: 3
+  _timeToNextWave: 3

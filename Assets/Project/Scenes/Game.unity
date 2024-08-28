@@ -1785,18 +1785,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1556459131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2063049687 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6870016077046062455, guid: 75dfd641a47d11d46b1a9a551a84b2f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1357745082154435623}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1357745082154435623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1838,12 +1826,12 @@ PrefabInstance:
     - target: {fileID: 4009271676812712438, guid: 75dfd641a47d11d46b1a9a551a84b2f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1820
+      value: -2160
       objectReference: {fileID: 0}
     - target: {fileID: 4009271676812712438, guid: 75dfd641a47d11d46b1a9a551a84b2f3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -980
+      value: -1216
       objectReference: {fileID: 0}
     - target: {fileID: 4009271676812712438, guid: 75dfd641a47d11d46b1a9a551a84b2f3,
         type: 3}
@@ -1916,7 +1904,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6870016077046062459, guid: 75dfd641a47d11d46b1a9a551a84b2f3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75dfd641a47d11d46b1a9a551a84b2f3, type: 3}
@@ -1938,6 +1927,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88628f28cad24ca5b1c6a966b1711274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1357745082154435626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5980199079029921843, guid: 75dfd641a47d11d46b1a9a551a84b2f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1357745082154435623}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6723477137373487941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1950,7 +1951,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _joystick
       value: 
-      objectReference: {fileID: 2063049687}
+      objectReference: {fileID: 1357745082154435626}
     - target: {fileID: 5772862829594439262, guid: 8434a953b4a082944a294d97395b50f2,
         type: 3}
       propertyPath: m_Name

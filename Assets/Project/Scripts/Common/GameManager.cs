@@ -25,7 +25,6 @@ namespace Project.Scripts.Common
         private async void Start()
         {
             await UniTask.Delay(100); //TODO по другому пока что никак
-            
             _heroHealth = _controller.GetComponent<HeroHealth>(); //TODO а че не в awake?
 
             _heroHealth.CurrentHealth.Subscribe(v =>
