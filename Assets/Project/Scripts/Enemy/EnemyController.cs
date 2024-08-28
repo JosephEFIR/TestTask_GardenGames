@@ -12,7 +12,7 @@ namespace Project.Scripts.Enemy
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyController : UnitController
     {
-        private HeroController _heroController;
+        [Inject] private HeroController _heroController;
         
         private NavMeshAgent _agent;
         private UnitAnimator _animator;
@@ -27,24 +27,22 @@ namespace Project.Scripts.Enemy
             _agent = GetComponent<NavMeshAgent>();
             _animator = GetComponent<UnitAnimator>();
         }
-
-        private void Start()
-        {
-            _heroController = FindObjectOfType<HeroController>(); //TODO пробовал через Zenject искать, выдает порой ошибку на update. Хотя в игре все нормально
-        }
-
+        
         private void Update()
         {
-            float distanceToTarget = Vector3.Distance(transform.position, _heroController.transform.position);
-
-            if (distanceToTarget > 1F)
+            if (_heroController != null)
             {
-                Move();
-            }
-            else
-            {
-                _agent.SetDestination(transform.position);
-                Attack();
+                float distanceToTarget = Vector3.Distance(transform.position, _heroController.transform.position);
+                
+                if (distanceToTarget > 1F)
+                {
+                    Move();
+                }
+                else
+                {
+                    _agent.SetDestination(transform.position);
+                    Attack();
+                }
             }
         }
 
@@ -87,6 +85,11 @@ namespace Project.Scripts.Enemy
             _animator.SetMoveSpeed(Mathf.Abs(_agent.velocity.magnitude));
             _agent.speed = 1;
             _agent.SetDestination(_heroController.transform.position);
+        }
+
+        public void Destroy()
+        {
+            Destroy(gameObject);
         }
     }
 }

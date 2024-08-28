@@ -14,7 +14,9 @@ namespace Project.Scripts.Factory
         
         private List<EnemyController> _enemies = new();
         private List<Transform> _spawnPoints;
+        
         public ReactiveProperty<int> ActiveEnemies = new();
+        public ReactiveProperty<int> EnemiesCount = new();
 
         private int _activeEnemiesStart;
         private Transform _currentSpawnPoint;
@@ -33,6 +35,8 @@ namespace Project.Scripts.Factory
 
         private void CreatePool()
         {
+            EnemiesCount.Value = _config.PoolSize;
+            
             for (int i = 0; i < _config.PoolSize; i++)
             {
                 SetNextPos();
@@ -69,7 +73,11 @@ namespace Project.Scripts.Factory
         public void RemoveEnemy(EnemyController enemy)
         {
             _enemies.Remove(enemy);
+            enemy.Destroy();
+            
             ActiveEnemies.Value--;
+            EnemiesCount.Value--;
+            Debug.Log(EnemiesCount.Value);
         }
 
         private void SetNextPos()
